@@ -25,7 +25,7 @@ function Home(props) {
 }
 
 const Container = styled.div`
-    height: 500vh;
+   
 `;
 
 export default Home;

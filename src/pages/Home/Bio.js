@@ -1,35 +1,39 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import styled from 'styled-components'
 import {ContentContainer} from "../../components/layout/Layout.Styled";
 import {FaFacebookSquare} from "react-icons/fa";
 import {FaGithub} from "react-icons/fa";
 import {FaLinkedin} from "react-icons/fa";
+import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
+import {useSelector} from "react-redux";
+import cn from  'classnames'
 
 function Bio(props) {
 
-    const {} = props;
+    const app = useSelector(state => state.app);
+
 
     return (
-        <Container>
+        <Container className={cn("", {showBio:app.showBio})}>
             <ContentContainer>
                 <BioContainer>
                     <div className="text">
                         <h2>About Me</h2>
-                        <p>Passionate designer & developer who loves simplicity in things and crafts beautiful user interfaces with love.</p>
+                        <p>아직은 서툴지만 코딩을 너무 좋아해서 개발자로 전직하기 위해 열심히 공부했어요!</p>
                         <div className="links">
                             <a href="">
                                 <FaFacebookSquare/>
                             </a>
-                            <a href="">
+                            <a href="https://www.linkedin.com/in/bin-hyun-kim-4b8289b6/">
                                 <FaLinkedin/>
                             </a>
-                            <a href="">
+                            <a href="https://github.com/binhk1004">
                                 <FaGithub/>
                             </a>
                         </div>
                     </div>
                     <div className="photo">
-                        <img src="https://www.beingeorge.com/justin/assets/images/avatar.jpg" alt=""/>
+                        <img src="https://ifh.cc/g/5nB7L9.jpg" alt=""/>
                     </div>
 
                 </BioContainer>
@@ -42,6 +46,13 @@ function Bio(props) {
 const Container = styled.div`
   margin-top: -200px;
   position:relative;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: 0.4s;
+  &.showBio{
+    opacity: 1;
+    transform: none;
+  }
 `;
 
 const BioContainer = styled.div`

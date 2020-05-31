@@ -4,6 +4,7 @@ import {appActions} from "../../redux/actionCreators";
 import {useSelector} from "react-redux";
 import YoutubeVideo from "../../components/YoutubeVideo";
 import Search from "../../components/Search";
+import List from "../../components/List";
 
 function Youtube(props) {
 
@@ -30,16 +31,14 @@ function Youtube(props) {
   return (
       <Container>
           <Search/>
-          <div className="grid">
-              <div className="grid-row">
-                  {videos.map((video, i) => (
-                          <div key={i} className='grid-col'>
-                              <YoutubeVideo   video={video}/>
-                          </div>
-                      ))
-                  }
-              </div>
-          </div>
+          <List data={videos}
+                render={(item,i)=>{
+                    return (<div key={i} className='grid-col'>
+                        <YoutubeVideo   video={item}/>
+                    </div>)
+                }}/>
+
+
 
       </Container>
   )

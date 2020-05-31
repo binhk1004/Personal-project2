@@ -10,8 +10,8 @@ function Visual(props) {
       <Container>
           <Overlay alpha={0.3}/>
           <Text>
-          <p>HELLO, I AM</p>
-          <h1>Justin Lee</h1>
+          <p>만나서 반가워요!</p>
+          <h1>빈현이에요!</h1>
           </Text>
 
       </Container>
@@ -25,7 +25,7 @@ const Container = styled.div`
   justify-content: center;
   position:relative;
   height: 100vh;
-  background: #fff url('https://www.beingeorge.com/justin/assets/images/slider3.jpg') 50% 50% / cover no-repeat;
+  background: #fff url('https://ifh.cc/g/OpzvgV.jpg') 50% 50% / cover no-repeat;
  
 
 `;

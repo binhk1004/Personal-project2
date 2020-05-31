@@ -4,21 +4,19 @@ import SideMenu from "./SideMenu";
 import Nav from "./Nav";
 import styled from "styled-components";
 import {appActions} from "../../redux/actionCreators";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import cn from 'classnames';
-import {Action} from "../../redux/app/redux";
 import {ContentContainer} from "../layout/Layout.Styled";
 
 function Header() {
 
-    const {app} = useSelector(state => state);
-    const dispatch = useDispatch();
+    const app = useSelector(state => state.app);
     return (
-        <Container className={cn({openSideMenu: app.openSideMenu})}>
+        <Container className={cn({openSideMenu: app.openSideMenu,showHeader:app.showHeader})}>
             <ContentContainer className={'container'}>
                 <Logo>Logo</Logo>
                 <Nav/>
-                <Button onClick={() => dispatch(Action.Creators.handlesidemenu(true))}>메뉴</Button>
+                <Button onClick={() => appActions.handlesidemenu(true)}>메뉴</Button>
                 <SideMenu/>
             </ContentContainer>
         </Container>
@@ -33,6 +31,13 @@ const Container = styled.div`
     left: 0;
     right: 0;
     z-index: 1500 ;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: 0.4s;
+    &.showHeader{
+      opacity: 1;
+      transform: none;
+    }
     .container{
     display: flex;
     }

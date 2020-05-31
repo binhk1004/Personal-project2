@@ -14,8 +14,8 @@ class MapContent extends Component {
             kakao.maps.load(() => {
                 let container = document.getElementById("Mymap");
                 let options = {
-                    center: new kakao.maps.LatLng(37.506502, 127.053617),
-                    level: 7
+                    center: new kakao.maps.LatLng(37.2772562,127.1135857),
+                    level: 4
                 };
 
                 const map = new window.kakao.maps.Map(container, options);
@@ -29,8 +29,7 @@ class MapContent extends Component {
     }
 }
 const MapContents = styled.div`
-  width: 100%;
-  height: 100%;
+  height: 500px;
 `;
 
 export default MapContent;

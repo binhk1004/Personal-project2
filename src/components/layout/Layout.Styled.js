@@ -8,6 +8,7 @@ export const ContentContainer = styled.div`
   max-width: 1130px;
   margin: 0 auto;
   padding: 0 15px;    
+  ${props => props.size === 'small' && 'max-width:900px'}
 `;
 
 export const Overlay = styled.div`

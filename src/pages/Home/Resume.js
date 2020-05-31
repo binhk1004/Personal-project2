@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {ShadowLine, TitleArea} from "../../components/layout/Layout.Styled";
+import {ContentContainer, ShadowLine, TitleArea} from "../../components/layout/Layout.Styled";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import Gauge from "../../components/Gauge";
 
 
 
@@ -13,6 +14,7 @@ function Resume(props) {
 
   return (
       <Container>
+          <ContentContainer>
           <TitleArea>
               <p>MY RESUME</p>
               <h2>
@@ -20,71 +22,81 @@ function Resume(props) {
                   <ShadowLine mt={30}/>
               </h2>
           </TitleArea>
-          <ResumeContainer>
-              <div>
-                  <div className="experience">
-                      <div className="title">
-                          <h3>My Experience</h3>
-                      </div>
-                      <div className="card">
-                          <h5>Senior Architect</h5>
-                          <h6>2015 - Present | Google</h6>
-                          <p>Collaborate with creative and development teams on the execution of ideas.</p>
-                      </div>
-                      <div className="card">
-                          <h5>Senior Architect</h5>
-                          <h6>2015 - Present | Google</h6>
-                          <p>Collaborate with creative and development teams on the execution of ideas.</p>
-                      </div>
+              <div className="expertises">
+                  <div className="item col-half">
+                      <h3>My Experience</h3>
+                      <ul>
+                          <li>
+                              <div className="card-item">
+                                  <h5>국내API팀 | 팀원</h5>
+                                  <h6>2018. 05 - 2019. 03 | 온다</h6>
+                                  <p>판매 플랫폼과의 협업</p>
+                              </div>
+                          </li>
+                          <li>
+                              <div className="card-item">
+                                  <h5>상품운영팀 | 팀원</h5>
+                                  <h6>2016. 10 - 2018. 04 | 헬로네이처</h6>
+                                  <p>증가하는 상품 수에 따른 상품관리 업무의 효율화 및 안전 관리 프로세스 수립</p>
+                              </div>
+                          </li>
+                          <li>
+                              <div className="card-item">
+                                  <h5>운영팀 | 사원</h5>
+                                  <h6>2015. 12 - 2016. 09 | 내담네트웍스</h6>
+                                  <p>서비스 론칭 전 대량의 상품을 단기간 내에 정확하게 등록하기 위해 꼼꼼하게 검수 업무를 진행함</p>
+                              </div>
+                          </li>
+                      </ul>
                   </div>
-                  <div className="education">
-                      <div className="title">
-                          <h3>My Education</h3>
-                      </div>
-                      <div className="card">
-                          <h5>Senior Architect</h5>
-                          <h6>2015 - Present | Google</h6>
-                          <p>Collaborate with creative and development teams on the execution of ideas.</p>
-                      </div>
-                      <div className="card">
-                          <h5>Senior Architect</h5>
-                          <h6>2015 - Present | Google</h6>
-                          <p>Collaborate with creative and development teams on the execution of ideas.</p>
-                      </div>
+                  <div className="item col-half">
+                      <h3>My Education</h3>
+                      <ul>
+                          <li>
+                              <div className="card-item">
+                                  <h5>Senior Architect</h5>
+                                  <h6>2015 - Present | Google</h6>
+                                  <p>Collaborate with creative and development teams on the execution of ideas.</p>
+                              </div>
+                          </li>
+                          <li>
+                              <div className="card-item">
+                                  <h5>Senior Architect</h5>
+                                  <h6>2015 - Present | Google</h6>
+                                  <p>Collaborate with creative and development teams on the execution of ideas.</p>
+                              </div>
+                          </li>
+                      </ul>
                   </div>
-                  <div className="codingskills">
-                      <div className="title">
-                          <h3>Coding Skills</h3>
-                      </div>
-                      <div className="skills">
-                          <div className="skill">
-                              <h6>HTML</h6>
-                              <div className="progress-bar">
-                                  <ProgressBar animated now={60} label={`${60}%`}></ProgressBar>
+                  <div className="item col-full">
+                      <h3>coding skills</h3>
+                      <ul className={'skill-list'}>
+                          <li>
+                              <div className="skill">
+                                  <Gauge title={'Html'} percentage={60} label={'html'}/>
                               </div>
-                          </div>
-                          <div className="skill">
-                              <h6>SCSS</h6>
-                              <div className="progress-bar">
-                                  <ProgressBar animated now={40} label={`${40}%`}></ProgressBar>
+                          </li>
+                          <li>
+                              <div className="skill">
+                                  <Gauge title={'Scss'} percentage={40} label={'scss'}/>
                               </div>
-                          </div>
-                          <div className="skill">
-                              <h6>Javascript</h6>
-                              <div className="progress-bar">
-                                  <ProgressBar animated now={60} label={`${60}%`}></ProgressBar>
+                          </li>
+                          <li>
+                              <div className="skill">
+                                  <Gauge title={'Javascript'} percentage={40} label={'scss'}/>
                               </div>
-                          </div>
-                          <div className="skill">
-                              <h6>React</h6>
-                              <div className="progress-bar">
-                                  <ProgressBar animated now={30} label={`${30}%`}></ProgressBar>
+                          </li>
+                          <li>
+                              <div className="skill">
+                                  <Gauge title={'React'} percentage={30} label={'scss'}/>
                               </div>
-                          </div>
-                      </div>
+                          </li>
+                      </ul>
                   </div>
+
               </div>
-          </ResumeContainer>
+          </ContentContainer>
+
 
       </Container>
   )
@@ -93,77 +105,55 @@ function Resume(props) {
 
 const Container = styled.div`
 
-`;
-
-const ResumeContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  .title{
-    font-size: 20px;
-    margin: 16px 0 20px; 
-  }
-  .experience{
-    float: left;
-    padding: 0 15px;
-  }
-  .education{
-  display: inline-block;
-  padding: 0 15px;
-  }
-  .card{
-    align-items: flex-start;
-    background:#ffffff;
-    height: 177px;
-    width: 100%;
-    margin: 24px 0 0;
-    padding: 24px;
-    overflow: hidden;
-    transition: 0.4s;
-    &:hover{
-      box-shadow:  1px 2px 30px rgba(0,0,0,0.2);
-   }
-   }
-   .skills{
-    background:#ffffff;
-    height: 310px;
-    width: 100%;
-    margin-top: 24px;
-    margin-bottom: 80px; 
-    padding: 24px;
-    overflow: hidden;
-    transition: 0.4s;
-    &:hover{
-      box-shadow:  1px 2px 30px rgba(0,0,0,0.2);
-   }
-   .skill{
-      .progress-bar{
-        width: 100%;
-        height: 15px;
-        text-align: center;
-        //background:#fd735a;;
-       }
+  .expertises{
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -15px;
+      margin-right: -15px;
+      ul{
+        
+        li{
+            margin-top: 30px;
+        }
       }
-   }
-    h5{
-    font-size: 18px;
-    }
-    h6{
-      //width: 30%;
-      font-size: 12px;
-      margin: 16px 0;
-      padding: 3px 4.8px;
-      background:#fd735a!important;
-      display: inline-block!important;
-      border-radius: 5px;
-      //text-align: center;
-    }
-    p{
-      font-size: 16px;
-    }
+      .skill-list{
+        background:#fff;
+        padding: 24px;
+        }
+      .col-half{
+          width: 50%;
+          padding: 15px;
+      }
+      .col-full{
+          width: 100%;
+          padding: 15px;
+      }
+      
+      .card-item{
+          background:#fff;
+          padding: 24px;
+          border: #ddd;
+          h5{
+              font-size: 18px;
+              color: #333;
+              margin-bottom: 15px;
+          }
+          h6{
+              font-size: 12px;
+              background-color: #fd735a;
+              display: inline-block;
+              color: #ffff;
+              padding: 2px 8px 0;
+              border-radius: 3px;
+              font-weight: 600;
+              margin-bottom: 20px;
+          }
+          p{
+          
+          }
+      }
   }
   
-  
 `;
-
 
 export default Resume;
