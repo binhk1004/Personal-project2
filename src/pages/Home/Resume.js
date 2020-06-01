@@ -54,16 +54,16 @@ function Resume(props) {
                       <ul>
                           <li>
                               <div className="card-item">
-                                  <h5>Senior Architect</h5>
-                                  <h6>2015 - Present | Google</h6>
-                                  <p>Collaborate with creative and development teams on the execution of ideas.</p>
+                                  <h5>ALMA - La Scuola Internazionale di Cucina Italiana</h5>
+                                  <h6>2011 - 2014 | 졸업</h6>
+                                  <p>이탈리아 조리 전공</p>
                               </div>
                           </li>
                           <li>
                               <div className="card-item">
-                                  <h5>Senior Architect</h5>
-                                  <h6>2015 - Present | Google</h6>
-                                  <p>Collaborate with creative and development teams on the execution of ideas.</p>
+                                  <h5>문화고등학교</h5>
+                                  <h6>2005 - 2008 | 졸업</h6>
+                                  <p>인문계</p>
                               </div>
                           </li>
                       </ul>
@@ -83,12 +83,12 @@ function Resume(props) {
                           </li>
                           <li>
                               <div className="skill">
-                                  <Gauge title={'Javascript'} percentage={40} label={'scss'}/>
+                                  <Gauge title={'Javascript'} percentage={40} label={'Javascript'}/>
                               </div>
                           </li>
                           <li>
                               <div className="skill">
-                                  <Gauge title={'React'} percentage={30} label={'scss'}/>
+                                  <Gauge title={'React'} percentage={30} label={'React'}/>
                               </div>
                           </li>
                       </ul>
